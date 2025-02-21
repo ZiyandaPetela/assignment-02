@@ -1,24 +1,48 @@
-use rand::{rng, Rng}; // Updated function
+use burn::module::Module;
+use burn::tensor::backend::Backend;
+use burn::tensor::Tensor;
 
-fn generate_data(samples: usize) -> Vec<(f32, f32)> {
-    let mut rng = rng(); // Use new function
-    let mut dataset = Vec::new();
+#[derive(Module, Debug)]
+pub struct LinearRegression<B: Backend> {
+    weight: Tensor<B, 1>,
+    bias: Tensor<B, 1>,
+}
 
-    for _ in 0..samples {
-        let x = rng.random_range(-10.0..10.0);
-        let noise: f32 = rng.random_range(-0.5..0.5); // Adding noise
-        let y = 2.0 * x + 1.0 + noise;
-        dataset.push((x, y));
+impl<B: Backend> LinearRegression<B> {
+    pub fn new(device: &B::Device) -> Self {
+        // Initialize weights and bias using proper tensor creation
+        let weight = Tensor::zeros([1], device);
+        let bias = Tensor::zeros([1], device);
+
+        Self { weight, bias }
     }
 
-    dataset
+    // Forward pass implementation
+    pub fn forward(&self, x: Tensor<B, 2>) -> Tensor<B, 2> {
+        // Clone and reshape weight for matrix multiplication
+        let weight = self.weight.clone().reshape([1, 1]);
+        // Perform matrix multiplication
+        let wx = x.matmul(weight);
+        // Add bias (broadcast automatically)
+        wx + self.bias.clone().reshape([1, 1])
+    }
+
+    // Mean Squared Error loss function
+    pub fn mse_loss(&self, predictions: Tensor<B, 2>, targets: Tensor<B, 2>) -> Tensor<B, 0> {
+        let diff = predictions - targets;
+        // Use mul for element-wise multiplication
+        let squared_diff = diff.clone().mul(diff);
+        // Reduce to scalar by taking mean and ensuring 0 dimensions
+        squared_diff.mean().reshape::<0, [usize; 0]>([])
+    }
+}
+
+// Model record for training
+#[derive(Module, Debug)]
+pub struct ModelRecord<B: Backend> {
+    pub model: LinearRegression<B>,
 }
 
 fn main() {
-    let dataset = generate_data(100);
-
-    for (x, y) in dataset.iter().take(10) { // Print first 10 values
-        println!("x: {:.2}, y: {:.2}", x, y);
-    }
+    println!("Linear Regression Model defined successfully!");
 }
-
