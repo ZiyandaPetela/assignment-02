@@ -1,7 +1,22 @@
+use rand::{rng, Rng};
 use burn::module::Module;
 use burn::tensor::backend::Backend;
 use burn::tensor::Tensor;
 
+// Data generation function from code #1
+fn generate_data(samples: usize) -> Vec<(f32, f32)> {
+    let mut rng=rng();
+    let mut dataset = Vec::new();
+    for _ in 0..samples {
+        let x = rng.random_range(-10.0..10.0);
+        let noise = rng.random_range(-0.5..0.5);
+        let y = 2.0 * x + 1.0 + noise;
+        dataset.push((x, y));
+    }
+    dataset
+}
+
+// Model definition from code #2
 #[derive(Module, Debug)]
 pub struct LinearRegression<B: Backend> {
     weight: Tensor<B, 1>,
@@ -10,39 +25,33 @@ pub struct LinearRegression<B: Backend> {
 
 impl<B: Backend> LinearRegression<B> {
     pub fn new(device: &B::Device) -> Self {
-        // Initialize weights and bias using proper tensor creation
         let weight = Tensor::zeros([1], device);
         let bias = Tensor::zeros([1], device);
-
         Self { weight, bias }
     }
 
-    // Forward pass implementation
     pub fn forward(&self, x: Tensor<B, 2>) -> Tensor<B, 2> {
-        // Clone and reshape weight for matrix multiplication
         let weight = self.weight.clone().reshape([1, 1]);
-        // Perform matrix multiplication
         let wx = x.matmul(weight);
-        // Add bias (broadcast automatically)
         wx + self.bias.clone().reshape([1, 1])
     }
 
-    // Mean Squared Error loss function
     pub fn mse_loss(&self, predictions: Tensor<B, 2>, targets: Tensor<B, 2>) -> Tensor<B, 0> {
         let diff = predictions - targets;
-        // Use mul for element-wise multiplication
         let squared_diff = diff.clone().mul(diff);
-        // Reduce to scalar by taking mean and ensuring 0 dimensions
         squared_diff.mean().reshape::<0, [usize; 0]>([])
     }
 }
 
-// Model record for training
+// Model record from code #2
 #[derive(Module, Debug)]
 pub struct ModelRecord<B: Backend> {
     pub model: LinearRegression<B>,
 }
 
 fn main() {
-    println!("Linear Regression Model defined successfully!");
+    let dataset = generate_data(100);
+    for (x, y) in dataset.iter().take(10) {
+        println!("x: {:.2}, y: {:.2}", x, y);
+    }
 }
