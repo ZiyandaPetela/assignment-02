@@ -45,3 +45,19 @@
 * Download and install Visual Studio Build Tools
 * Select C++ build tools during installation
 * Restart your system if necessary
+
+### Clone the Repository
+* Run the following command to clone the repository:
+   * git clone https://github.com/ZiyandaPetela/assignment-02.git
+   * cd assignment-02
+* Verify Rust Installation
+
+After installing Rust, confirm that it is successfully installed by running the following command:
+
+rustc --version
+
+If Rust is installed correctly, this command should return the installed version.
+
+Install Dependencies
+
+Navigate to the project directory and run:
