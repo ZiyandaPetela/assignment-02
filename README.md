@@ -27,9 +27,21 @@
 * Final training loss: [Your final loss value]
 * Model successfully approximated the linear relationship
 * Validation results showed strong correlation with expected values
+  
 ### Visualization
 #### Used textplots crate to create visual representations of:
 * Training data distribution
 * Model predictions vs. actual values
 * Loss convergence over training iterations
 
+## Project Setup
+### Prerequisites
+#### Ensure you have the following installed:
+* Rust (latest stable version)
+* Git (for version control and cloning repositories)
+* RustRover (for IDE support)
+* Visual C++ Build Tools (for Windows users)
+#### Installing Visual C++ Build Tools (Windows Only)
+* Download and install Visual Studio Build Tools
+* Select C++ build tools during installation
+* Restart your system if necessary
