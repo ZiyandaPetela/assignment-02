@@ -93,10 +93,10 @@
 ##### Even though some errors took time to resolve, this project strengthened my problem-solving abilities and reinforced my knowledge of Rust and AI development.
 
 ## Project Structure
-assignment-02/
-├── src/
-│   ├── main.rs      # Main program file
-│   ├── model.rs     # AI model definition
+##### assignment-02/
+##### ├── src/
+#####│   ├── main.rs      # Main program file
+##### │   ├── model.rs     # AI model definition
 │   ├── dataset.rs   # Synthetic dataset generation
 ├── Cargo.toml       # Project dependencies
 ├── README.md        # Project documentation
