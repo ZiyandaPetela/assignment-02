@@ -56,4 +56,38 @@
 * If Rust is installed correctly, this command should return the installed version.
 #### Install Dependencies
 * Navigate to the project directory and run:
- *  cargo build
+   * cargo build
+
+## Learning Reflection
+### Resources Used
+#### Documentation
+* Burn Library (v0.16.0) documentation
+* Rust official documentation
+* RustRover Documentation for IDE usage
+#### AI Assistance
+* Used AI tools for debugging complex errors
+* Leveraged AI for understanding Burn's architecture
+* Validated implementation approaches with AI guidance
+#### Other Resources
+* Stack Overflow for troubleshooting Rust and Burn-related issues
+* GitHub discussions for similar implementations
+* Technical blogs on Rust machine learning
+* Used AI tools to debug errors and understand Burn's implementation.
+* Watched YouTube tutorials to educate myself on using Burn effectively.
+
+## Challenges and Solutions
+### Technical Challenges
+* Dependency Issues: Faced compatibility issues with Burn versions but resolved them by keeping dependencies fixed.
+* Compilation Errors: Encountered linking errors on Windows, which were fixed by installing Visual C++ Build Tools.
+* Data Formatting: Had to preprocess input data correctly to match the model's expected format
+* Difficulty with Burn's tensor operations
+* Integration issues with the plotting library
+
+### Learning Outcomes
+* Gained a deeper understanding of machine learning in Rust.
+* Improved debugging skills for Rust compilation errors.
+* Learned how to handle dependency conflicts in Rust projects.
+* Recognized the importance of clear documentation for troubleshooting.
+* Improved understanding of machine learning fundamentals
+* Developed better debugging strategies for Rust projects
+##### Even though some errors took time to resolve, this project strengthened my problem-solving abilities and reinforced my knowledge of Rust and AI development.
