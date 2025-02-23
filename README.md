@@ -75,22 +75,22 @@
 * Used AI tools to debug errors and understand Burn's implementation.
 * Watched YouTube tutorials to educate myself on using Burn effectively.
 
-## Challenges and Solutions
-### Technical Challenges
+### Challenges and Solutions
+#### Technical Challenges
 * Dependency Issues: Faced compatibility issues with Burn versions but resolved them by keeping dependencies fixed.
 * Compilation Errors: Encountered linking errors on Windows, which were fixed by installing Visual C++ Build Tools.
 * Data Formatting: Had to preprocess input data correctly to match the model's expected format
 * Difficulty with Burn's tensor operations
 * Integration issues with the plotting library
 
-### Learning Outcomes
+#### Learning Outcomes
 * Gained a deeper understanding of machine learning in Rust.
 * Improved debugging skills for Rust compilation errors.
 * Learned how to handle dependency conflicts in Rust projects.
 * Recognized the importance of clear documentation for troubleshooting.
 * Improved understanding of machine learning fundamentals
 * Developed better debugging strategies for Rust projects
-##### Even though some errors took time to resolve, this project strengthened my problem-solving abilities and reinforced my knowledge of Rust and AI development.
+###### Even though some errors took time to resolve, this project strengthened my problem-solving abilities and reinforced my knowledge of Rust and AI development.
 
 ## Project Structure
 ##### assignment-02/
