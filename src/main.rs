@@ -1,9 +1,10 @@
+// Importing libraries
 use rand::{rng, Rng};
 use burn::module::Module;
 use burn::tensor::backend::Backend;
 use burn::tensor::Tensor;
 
-// Data generation function from code #1
+// Function to generate synthetic training data
 fn generate_data(samples: usize) -> Vec<(f32, f32)> {
     let mut rng=rng();
     let mut dataset = Vec::new();
@@ -16,13 +17,12 @@ fn generate_data(samples: usize) -> Vec<(f32, f32)> {
     dataset
 }
 
-// Model definition from code #2
-#[derive(Module, Debug)]
+// Define a lineaImplement methods for the LinearRegression model
 pub struct LinearRegression<B: Backend> {
     weight: Tensor<B, 1>,
     bias: Tensor<B, 1>,
 }
-
+// Implement methods for the LinearRegression model
 impl<B: Backend> LinearRegression<B> {
     pub fn new(device: &B::Device) -> Self {
         let weight = Tensor::zeros([1], device);
@@ -42,14 +42,14 @@ impl<B: Backend> LinearRegression<B> {
         squared_diff.mean().reshape::<0, [usize; 0]>([])
     }
 }
+// Training function for the linear regression model
 pub fn train(&mut self, x: &Vec<f32>, y: &Vec<f32>, epochs: usize, learning_rate: f32) {
         let n = x.len() as f32;
 
-        for epoch in 0..epochs {
-            // Dummy forward pass (replace with proper tensor logic)
+        for epoch in 0..epochs 
             let predictions: Vec<f32> = x.iter().map(|&x| 2.0 * x + 1.0).collect();
 
-            // Compute loss (MSE)
+            
             let loss: f32 = predictions.iter()
                 .zip(y.iter())
                 .map(|(&pred, &target)| (pred - target).powi(2))
@@ -61,7 +61,7 @@ pub fn train(&mut self, x: &Vec<f32>, y: &Vec<f32>, epochs: usize, learning_rate
             }
         }
 }
-// Model record from code #2
+// Define a model record struct to store the trained model
 #[derive(Module, Debug)]
 pub struct ModelRecord<B: Backend> {
     pub model: LinearRegression<B>,
