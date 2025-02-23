@@ -91,3 +91,17 @@
 * Improved understanding of machine learning fundamentals
 * Developed better debugging strategies for Rust projects
 ##### Even though some errors took time to resolve, this project strengthened my problem-solving abilities and reinforced my knowledge of Rust and AI development.
+
+## Project Structure
+assignment-02/
+├── src/
+│   ├── main.rs      # Main program file
+│   ├── model.rs     # AI model definition
+│   ├── dataset.rs   # Synthetic dataset generation
+├── Cargo.toml       # Project dependencies
+├── README.md        # Project documentation
+### Running the Model
+* To train and test the linear regression model, execute:
+    * cargo run
+### Expected Output
+* The model should learn to predict values close to y = 2x + 1. After training, the output should resemble:
