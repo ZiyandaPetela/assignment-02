@@ -17,7 +17,7 @@ fn generate_data(samples: usize) -> Vec<(f32, f32)> {
     dataset
 }
 
-// Define a lineaImplement methods for the LinearRegression model
+// Define a lineaIR mplement methods for the LinearRegression model
 pub struct LinearRegression<B: Backend> {
     weight: Tensor<B, 1>,
     bias: Tensor<B, 1>,
