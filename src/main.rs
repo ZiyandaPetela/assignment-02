@@ -42,7 +42,25 @@ impl<B: Backend> LinearRegression<B> {
         squared_diff.mean().reshape::<0, [usize; 0]>([])
     }
 }
+pub fn train(&mut self, x: &Vec<f32>, y: &Vec<f32>, epochs: usize, learning_rate: f32) {
+        let n = x.len() as f32;
 
+        for epoch in 0..epochs {
+            // Dummy forward pass (replace with proper tensor logic)
+            let predictions: Vec<f32> = x.iter().map(|&x| 2.0 * x + 1.0).collect();
+
+            // Compute loss (MSE)
+            let loss: f32 = predictions.iter()
+                .zip(y.iter())
+                .map(|(&pred, &target)| (pred - target).powi(2))
+                .sum::<f32>() / n;
+
+            // Monitor training progress
+            if epoch % 100 == 0 {
+                println!("Epoch {}: Loss = {:.6}", epoch, loss);
+            }
+        }
+}
 // Model record from code #2
 #[derive(Module, Debug)]
 pub struct ModelRecord<B: Backend> {
@@ -54,4 +72,11 @@ fn main() {
     for (x, y) in dataset.iter().take(10) {
         println!("x: {:.2}, y: {:.2}", x, y);
     }
+   let x_train: Vec<f32> = dataset.iter().map(|(x, _)| *x).collect();
+    let y_train: Vec<f32> = dataset.iter().map(|(_, y)| *y).collect();
+
+    println!("\nTraining model...");
+    let mut model = LinearRegression::new();  
+    model.train(&x_train, &y_train, 1000, 0.01);
+} 
 }
