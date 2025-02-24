@@ -38,7 +38,7 @@
 * To train and test the linear regression model, execute:
     * cargo run
 #### Expected Output
-* The model should learn to predict values close to y = 2x + 1.
+* The model should learn to predict values that give y = 2x + 1.
 
 ## Project Setup
 ### Prerequisites
@@ -76,7 +76,7 @@
 * Used AI tools to debug errors and understand Burn's implementation.
 * Watched YouTube tutorials to educate myself on using Burn effectively.
 
-## Challenges and Solutions
+### Challenges and Solutions
 ### My Personal Challenge and Learning Experience
 #### The Core Challenge
 * Initially, I faced significant difficulties with this project primarily due to:
@@ -86,7 +86,6 @@
 #### Specific Issues Encountered
 ##### Code Implementation Struggles:
 * Had trouble understanding the tensor operations in burn
-* Found it difficult to properly structure the linear regression model
 * Struggled with type conversions and compiler errors
 * Could not successfully implement the plotting requirements
 ##### AI Assistance Limitations:
