@@ -106,5 +106,5 @@
 * Need to understand the code that AI provides
 * Cannot rely solely on AI without personal understanding
 
-  ### I failed to implement the entire solution based on the reasons listed above. The part I didnot finish is plotting the results using the textplots crate.
+  ### I failed to implement the entire solution based on the reasons listed above. The part I didn't finish is plotting the results using the textplots crate.
 
