@@ -31,7 +31,7 @@
 ### Project Structure
 ##### linear_regression_model/
 ##### ├── src/
-  ##### ├── main.rs      # Main program file
+  * ├── main.rs      # Main program file
 ##### ├── Cargo.toml       # Project dependencies
 ##### ├── README.md        # Project documentation
 #### Running the Model
