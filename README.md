@@ -29,7 +29,7 @@
 * Validation results showed strong correlation with expected values
 
 ### Project Structure
-##### assignment-02/
+##### linear_regression_model/
 ##### ├── src/
   ##### ├── main.rs      # Main program file
 ##### ├── Cargo.toml       # Project dependencies
@@ -80,9 +80,9 @@
 ### My Personal Challenge and Learning Experience
 #### The Core Challenge
 * Initially, I faced significant difficulties with this project primarily due to:
-* Limited understanding of the Rust language syntax and concepts
-* Unfamiliarity with the burn library version 0.16.0
-* Challenges in implementing the plotting functionality as required
+   * Limited understanding of the Rust language syntax and concepts
+   * Unfamiliarity with the burn library version 0.16.0
+   * Challenges in implementing the plotting functionality as required
 #### Specific Issues Encountered
 ##### Code Implementation Struggles:
 * Had trouble understanding the tensor operations in burn
@@ -106,4 +106,6 @@
 * AI is a helpful resource but not a complete solution
 * Need to understand the code that AI provides
 * Cannot rely solely on AI without personal understanding
+
+  ### I failed to implement the entire solution based on the reasons listed above. The part I didnot finish is plotting the results using the textplots crate.
 
