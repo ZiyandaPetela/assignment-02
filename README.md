@@ -31,7 +31,7 @@
 ### Project Structure
 ##### assignment-02/
 ##### ├── src/
-     ##### ├── main.rs      # Main program file
+  ##### ├── main.rs      # Main program file
 ##### ├── Cargo.toml       # Project dependencies
 ##### ├── README.md        # Project documentation
 #### Running the Model
@@ -49,8 +49,8 @@
 
 ### Clone the Repository
 * Run the following command to clone the repository:
-   * git clone https://github.com/ZiyandaPetela/assignment-02.git
-   * cd assignment-02
+   * git clone https://github.com/ZiyandaPetela/linear_regression_model.git
+   * cd linear_regression_model
 * Verify Rust Installation
 * After installing Rust, confirm that it is successfully installed by running the following command:
     * rustc --version
@@ -76,20 +76,34 @@
 * Used AI tools to debug errors and understand Burn's implementation.
 * Watched YouTube tutorials to educate myself on using Burn effectively.
 
-### Challenges and Solutions
-#### Technical Challenges
-* Dependency Issues: Faced compatibility issues with Burn versions but resolved them by keeping dependencies fixed.
-* Compilation Errors: Encountered linking errors on Windows, which were fixed by installing Visual C++ Build Tools.
-* Data Formatting: Had to preprocess input data correctly to match the model's expected format
-* Difficulty with Burn's tensor operations
-* Integration issues with the plotting library
+## Challenges and Solutions
+### My Personal Challenge and Learning Experience
+#### The Core Challenge
+* Initially, I faced significant difficulties with this project primarily due to:
+* Limited understanding of the Rust language syntax and concepts
+* Unfamiliarity with the burn library version 0.16.0
+* Challenges in implementing the plotting functionality as required
+#### Specific Issues Encountered
+##### Code Implementation Struggles:
+* Had trouble understanding the tensor operations in burn
+* Found it difficult to properly structure the linear regression model
+* Struggled with type conversions and compiler errors
+* Could not successfully implement the plotting requirements
+##### AI Assistance Limitations:
+* Discovered that even AI tools had limitations in providing working solutions
+* Received code that sometimes didn't compile or work as expected
+* Realized that AI couldn't compensate for my fundamental knowledge gaps
 
-#### Learning Outcomes
+#### What I Learned
+##### Importance of Fundamentals:
+* Having a strong foundation in the programming language is crucial
+* Understanding basic concepts cannot be bypassed, even with AI help
+* Need to invest time in learning the fundamentals before attempting complex projects
 * Gained a deeper understanding of machine learning in Rust.
 * Improved debugging skills for Rust compilation errors.
-* Learned how to handle dependency conflicts in Rust projects.
-* Recognized the importance of clear documentation for troubleshooting.
-* Improved understanding of machine learning fundamentals
-* Developed better debugging strategies for Rust projects
-###### Even though some errors took time to resolve, this project strengthened my problem-solving abilities and reinforced my knowledge of Rust and AI development.
+* Learned how to handle dependency conflicts in Rust projects
+##### Reality of AI Tools:
+* AI is a helpful resource but not a complete solution
+* Need to understand the code that AI provides
+* Cannot rely solely on AI without personal understanding
 
