@@ -24,7 +24,7 @@
 ## Results and Evaluation
 
 ### Model Performance
-* Vlues for x and y
+* Values for x and y
 * Model successfully approximated the linear relationship
 * Validation results showed strong correlation with expected values
 
